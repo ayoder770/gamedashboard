@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/clue_style.css' %}" />
+</head>
+<body id="page_body">
+    <div class="full_page">
+        <div class="clue_container">
+            
+            <div class="thirds" id="rooms_list">
+                <div class="list_title">Rooms</div>
+                <div class="item_row maybe">
+                    <div class="yes_default yon_always">YES</div>
+                    <div class="item_always item_default">Ballroom</div>
+                    <div class="no_default yon_always">NO</div>
+                    <div class="my_card_box not_my_card"></div>
+                </div>
+                <div class="item_row maybe">
+                    <div class="yes_default yon_always">YES</div>
+                    <div class="item_always item_default">Billiard Room</div>
+                    <div class="no_default yon_always">NO</div>
+                    <div class="my_card_box not_my_card"></div>
+                </div>
+                <div class="item_row maybe">
+                    <div class="yes_default yon_always">YES</div>
+                    <div class="item_always item_default">Conservatory</div>
+                    <div class="no_default yon_always">NO</div>
+                    <div class="my_card_box not_my_card"></div>
+                </div>
+                <div class="item_row maybe">
+                    <div class="yes_default yon_always">YES</div>
+                    <div class="item_always item_default">Dining Room</div>
+                    <div class="no_default yon_always">NO</div>
+                    <div class="my_card_box not_my_card"></div>
+                </div>
+                <div class="item_row maybe">
+                    <div class="yes_default yon_always">YES</div>
+                    <div class="item_always item_default">Hall</div>
+                    <div class="no_default yon_always">NO</div>
+                    <div class="my_card_box not_my_card"></div>
+                </div>
+                <div class="item_row maybe">
+                    <div class="yes_default yon_always">YES</div>
+                    <div class="item_always item_default">Kitchen</div>
+                    <div class="no_default yon_always">NO</div>
+                    <div class="my_card_box not_my_card"></div>
+                </div>
+                <div class="item_row maybe">
+                    <div class="yes_default yon_always">YES</div>
+                    <div class="item_always item_default">Library</div>
+                    <div class="no_default yon_always">NO</div>
+                    <div class="my_card_box not_my_card"></div>
+                </div>
+                <div class="item_row maybe">
+                    <div class="yes_default yon_always">YES</div>
+                    <div class="item_always item_default">Lounge</div>
+                    <div class="no_default yon_always">NO</div>
+                    <div class="my_card_box not_my_card"></div>
+                </div>
+                <div class="item_row maybe">
+                    <div class="yes_default yon_always">YES</div>
+                    <div class="item_always item_default">Study</div>
+                    <div class="no_default yon_always">NO</div>
+                    <div class="my_card_box not_my_card"></div>
+                </div>
+            </div>
+            
+            <div class="thirds" id="suspect_list">
+                <div class="list_title">Suspects</div>
+                <div class="item_row maybe row_dsk">
+                    <div class="yes_default yon_always yon_dsk">YES</div>
+                    <div class="item_always item_default yon_dsk">Mr. Green</div>
+                    <div class="no_default yon_always yon_dsk">NO</div>
+                    <div class="my_card_box not_my_card yon_dsk"></div>
+                </div>
+                <div class="item_row maybe row_dsk">
+                    <div class="yes_default yon_always yon_dsk">YES</div>
+                    <div class="item_always item_default yon_dsk">Col. Mustard</div>
+                    <div class="no_default yon_always yon_dsk">NO</div>
+                    <div class="my_card_box not_my_card yon_dsk"></div>
+                </div>
+                <div class="item_row maybe row_dsk">
+                    <div class="yes_default yon_always yon_dsk">YES</div>
+                    <div class="item_always item_default yon_dsk">Mrs. Peacock</div>
+                    <div class="no_default yon_always yon_dsk">NO</div>
+                    <div class="my_card_box not_my_card yon_dsk"></div>
+                </div>
+                <div class="item_row maybe row_dsk">
+                    <div class="yes_default yon_always yon_dsk">YES</div>
+                    <div class="item_always item_default yon_dsk">Prof. Plum</div>
+                    <div class="no_default yon_always yon_dsk">NO</div>
+                    <div class="my_card_box not_my_card yon_dsk"></div>
+                </div>
+                <div class="item_row maybe row_dsk">
+                    <div class="yes_default yon_always yon_dsk">YES</div>
+                    <div class="item_always item_default yon_dsk">Ms. Scarlet</div>
+                    <div class="no_default yon_always yon_dsk">NO</div>
+                    <div class="my_card_box not_my_card yon_dsk"></div>
+                </div>
+                <div class="item_row maybe row_dsk">
+                    <div class="yes_default yon_always yon_dsk">YES</div>
+                    <div class="item_always item_default yon_dsk">Mrs. White</div>
+                    <div class="no_default yon_always yon_dsk">NO</div>
+                    <div class="my_card_box not_my_card yon_dsk"></div>
+                </div>
+            </div>
+
+            <div class="thirds" id="weapsons_list">
+                <div class="list_title">Weapons</div>
+                <div class="item_row maybe row_dsk">
+                    <div class="yes_default yon_always yon_dsk">YES</div>
+                    <div class="item_always item_default yon_dsk">Candlestick</div>
+                    <div class="no_default yon_always yon_dsk">NO</div>
+                    <div class="my_card_box not_my_card yon_dsk"></div>
+                </div>
+                <div class="item_row maybe row_dsk">
+                    <div class="yes_default yon_always yon_dsk">YES</div>
+                    <div class="item_always item_default yon_dsk">Knife</div>
+                    <div class="no_default yon_always yon_dsk">NO</div>
+                    <div class="my_card_box not_my_card yon_dsk"></div>
+                </div>
+                <div class="item_row maybe row_dsk">
+                    <div class="yes_default yon_always yon_dsk">YES</div>
+                    <div class="item_always item_default yon_dsk">Lead Pipe</div>
+                    <div class="no_default yon_always yon_dsk">NO</div>
+                    <div class="my_card_box not_my_card yon_dsk"></div>
+                </div>
+                <div class="item_row maybe row_dsk">
+                    <div class="yes_default yon_always yon_dsk">YES</div>
+                    <div class="item_always item_default yon_dsk">Revolver</div>
+                    <div class="no_default yon_always yon_dsk">NO</div>
+                    <div class="my_card_box not_my_card yon_dsk"></div>
+                </div>
+                <div class="item_row maybe row_dsk">
+                    <div class="yes_default yon_always yon_dsk">YES</div>
+                    <div class="item_always item_default yon_dsk">Rope</div>
+                    <div class="no_default yon_always yon_dsk">NO</div>
+                    <div class="my_card_box not_my_card yon_dsk"></div>
+                </div>
+                <div class="item_row maybe row_dsk">
+                    <div class="yes_default yon_always yon_dsk">YES</div>
+                    <div class="item_always item_default yon_dsk">Wrench</div>
+                    <div class="no_default yon_always yon_dsk">NO</div>
+                    <div class="my_card_box not_my_card yon_dsk"></div>
+                </div>
+            </div>
+            <textarea rows="50" cols="40" name="comment">
+                
+            :Ballroom:
+            :Billiard Room:
+            :Conservatory:
+            :Dining Room:
+            :Hall:
+            :Kitchen:
+            :Library:
+            :Lounge:
+            :Study:
+____________________________________
+                
+            :Green:
+            :Mustard:
+            :Peacock:
+            :Plum:
+            :Scarlet:
+            :White:
+____________________________________
+                
+            :Candlestick:
+            :Knife:
+            :Lead Pipe:
+            :Revolver:
+            :Rope:
+            :Wrench:
+____________________________________
+            </textarea>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="{% static 'js/clue_scripts.js' %}" async defer></script>
+{% endblock %}

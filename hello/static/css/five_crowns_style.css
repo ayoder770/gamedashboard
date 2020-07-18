@@ -1,0 +1,141 @@
+form input{
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    height: 25px;
+    border-radius: 4px;
+    width: 80%;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 18px;
+} 
+::placeholder{
+    color:#000;
+}
+    
+#enter_score_bar{
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #000000;
+    height: 50px;
+    position: fixed;
+    z-index: 1000;
+    text-align: center;
+    font-size: 25px;
+    padding-top: 8px;
+    background-color: #D6B12F;
+    color: #FFFFFF;
+}
+
+.all_forms{
+    width: 80%;
+    text-align: center;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 20px 0px;
+    background-color: rgba(20,20,20,.8);
+    z-index: 1000;
+    top: 60px;
+    position: absolute;
+    left: 10%;
+    text-align: center;
+}
+
+#score_form{
+    width: 80%;
+    text-align: center;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 20px 0px;
+    background-color: rgba(20,20,20,.8);
+    z-index: 1000;
+    top: 60px;
+    position: absolute;
+    left: 10%;
+    text-align: center;
+}
+
+button{
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #D6B12F;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 20px;
+    width: 200px;
+}
+button:hover{
+    cursor: pointer;
+    background-color: #A37E00;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    margin: 0px;
+    background-color: #5E2E6C
+}
+
+#fc_whole_page{
+    padding-top: 49px;
+    width: 95%;
+    position: relative;
+    margin: auto;
+    max-width: 500px;
+}
+
+.full_row{
+    position: relative;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+
+.round{
+    position: relative;
+    width: 10%;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+.player{
+    position: relative;
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 5px 0px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+.score_cont{
+    display: block;
+    position: relative;  
+}
+.fc_round{
+    width: 10%;
+    position: relative;
+    height: 50px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    font-size: 30px;
+    padding-top: 6px;
+}
+.fc_round:hover{
+    cursor: pointer;
+}
+.this_score{
+    height: 25px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+.this_update{
+    height: 25px;
+    border: 1px solid #000000;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+.display_block{
+    display: block;
+}
+.display_none{
+    display: none;
+}

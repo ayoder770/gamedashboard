@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/pictionary_style.css' %}" />
+</head>
+<body>
+	<!-- Audio Element for Round Timer -->
+	<audio id="gameTimer">
+		<source src="{% static 'sounds/buzzer.mp3' %}" type="audio/mpeg">
+	</audio>
+	<div id="playTurnBuzzer" onclick="playBuzzer()"></div>
+
+	<!-- Intro Panel for Game Setup -->
+	<div id="gameSetupContainer">
+		<div style="max-width:300px;padding:10px;box-sizing:border-box;margin:auto">
+			<h1 class="center">Welcome to Pictionary!</h1>
+			<h2 class="center">Select a Card Side:</h2>
+			<div id="chooseRed" class="selectCardBtn white center redPictCard">Red</div>
+			<div id="chooseBlue" class="selectCardBtn white center bluePictCard">Blue</div>
+		</div>
+	</div>
+
+	<!-- Container for Turn Details -->
+	<div id="turnOverlay" class="hide">
+		<div id="turnWordCont">
+			<h2 style="font-size:30px;">Your Word:</h2>
+			<h3 style="font-size:25px;" id="turnWord"></h3>
+			<hr style="border:1px solid #fff;width:200px;margin:30px auto;" />
+			<h3 style="font-size:22px;">All Play:</h3>
+			<div style="font-size:22px;">Yes:<span id="allPlayYes"></span> - No:<span id="allPlayNo"></span></div>
+			<hr style="border:1px solid #fff;width:200px;margin:30px auto;" />
+			<div onclick="begin_turn()" style="margin:auto;" class="btn">Go!</div>
+			<h2 id="clockTime"></h2>
+		</div>
+	</div>
+
+	<!-- Pictionary Card Content -->
+	<div id="fullPage">
+		<div class="bluePictCard" id="pictCard">
+			<div><img id="pencilImage" src="" /></div>
+			<div id="orange" class="categoryTitleBox">ALL PLAY</div>	
+			<div id="green" class="categoryTitleBox">DIFFICULT</div>	
+			<div id="pink" class="categoryTitleBox">ACTION</div>	
+			<div id="yellow" class="categoryTitleBox">PERSON-PLACE-ANIMAL</div>	
+			<div id="blue" class="categoryTitleBox">OBJECT</div>	
+		</div>	
+	</div>
+<script type="text/javascript" src="{% static 'js/pictionary_scripts.js' %}"></script>
+</body>
+{% endblock %}

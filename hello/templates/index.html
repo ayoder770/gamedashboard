@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<body style="background-image:url('static/images/sky_back.jpg');"> 
+    <div class="home_header">
+        <div class="hm_header_txt">App Dashboard</div>
+    </div>
+    <div class="container">
+        <div class="app_cont">
+        
+            <a href="/clue" class="app_link"><img class="rounded shadow" src="{% static 'images/clue_app.png'%}" alt="Clue Game" width="100" height="100" hspace="10"></a>
+            
+            <a href="/fivecrowns" class="app_link"><img class="rounded shadow" src="{% static 'images/fivecrowns_app.png'%}" alt="Five Crowns Scoresheet" width="100" height="100" hspace="10"></a>
+            
+            <a href="/sorry" class="app_link"><img class="rounded shadow" src="{% static 'images/sorry_app.png'%}" alt="Sorry Card Deck" width="100" height="100" hspace="10"></a>
+            
+            <a href="/taboo" class="app_link"><img class="rounded shadow" src="{% static 'images/taboo_app.png'%}" alt="Taboo System" width="100" height="100" hspace="10"></a>
+
+    
+        </div>
+    </div> 
+</body>
+{% endblock %}

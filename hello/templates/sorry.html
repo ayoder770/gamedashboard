@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/sorry_style.css' %}" />
+</head>
+<body>
+    <div id="rs_overlay">
+        <div onclick="shuffle_deck()" id="rs_button">SHUFFLE DECK</div>
+    </div>
+    <div id="sorry_whole_page">
+        <div onclick="draw_next_card()" id="card">
+            <figure id="card_back"></figure>
+            <figure id="card_front">
+                <div id="sorry_card_top">
+                    <h5 class="card_number" id="top_numb"></h5>
+                    <p class="card_desc" id="top_desc"></p>
+                </div>
+                <div id="sorry_card_middle">
+                  <h1 class="big_number" id="big_numb"></h1>
+                </div>
+                <div id="sorry_card_bottom">
+                    <h5 class="card_number" id="bot_numb"></h5>
+                    <p class="card_desc" id="bot_desc"></p>
+                </div>
+            </figure> 
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="{% static 'js/sorry_scripts.js' %}"></script>
+{% endblock %}

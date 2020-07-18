@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/taboo_style.css' %}" />
+</head>
+<body style="background-image:url('static/images/sky_back.jpg');"> 
+<div class="full_page">
+  
+<!-- TEAM NAME FORM SCREEN -->
+<div id="form_cont" class="turn_overlay"> 
+    <div class="inner_text">
+    <form class="all_forms" autocomplete="off" id="team_names" role = "form">                       
+        <input class="name_input" id="TA" type="text" placeholder = "Team A"/><br>
+        <input class="name_input" id="TB" type="text" placeholder = "Team B"/><br>                       
+        <button class="score_button" type="submit">Enter Teams</button>         
+    </form>  
+    </div>
+</div>        
+        
+<!-- SCREEN TO PICK WHOS TURN IT IS -->   
+<div id="turn_pick" class="turn_overlay hide">
+    <div class="turn_button_cont">
+        <div onclick="team_a_turn()" class="turn_button" style="margin-bottom:20px;"><span id="team_a_one">Team A</span> - GO!</div>
+        <div onclick="team_b_turn()" class="turn_button"><span id="team_b_one">Team B</span> - GO!</div>
+    </div>
+</div>
+    
+<!-- TIMES UP SCREEN -->    
+<div id="turn_over" class="turn_overlay hide">
+    <div class="turn_button_cont times_up_text">
+        Time's Up!
+    </div>
+</div>
+    
+    
+    <div class="twenty">
+        <div class="inner_block" id="team_a_block"><div class="inner_text"><span id="team_a_two">Team A</span>:<br><span id="team_a_pts" class="points_style">0</span></div></div>
+        <div class="inner_block" id="team_b_block"><div class="inner_text"><span id="team_b_two">Team B</span>:<br><span id="team_b_pts" class="points_style">0</span></div></div>
+    </div> 
+    
+    <div class="aors forty">
+        <div class="inner_block clickable"><div onclick="add_pts()" class="inner_text">+1</div></div>
+        <div class="inner_block clickable"><div onclick="sub_pts()" class="inner_text">-1</div></div>
+    </div> 
+    
+    <div class="forty port">
+        <div class="inner_block clickable port"><div onclick="taboo_or_pass()" class="inner_text">Pass</div></div>
+        <div class="inner_block clickable port"><div onclick="taboo_or_pass()" class="inner_text">Taboo</div></div>
+    </div> 
+    
+    <div class="twenty">
+        <div class="inner_block new_game_button clickable"><div class="inner_text">New Game</div></div>
+        <div style="height:100%;font-size:20px;" class="inner_block"><div class="inner_text">Time:<br><span id="clock_time">60</span></div></div> 
+        <div onclick="stop_clock()" class="inner_block stop_button clickable"><div class="inner_text">Stop</div></div>
+    </div>   
+</div> 
+</body>
+<script type="text/javascript" src="{% static 'js/taboo_scripts.js' %}" async defer></script>
+{% endblock %}

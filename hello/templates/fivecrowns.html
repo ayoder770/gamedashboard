@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/five_crowns_style.css' %}" />
+</head>
+<body>
+    
+    <!-- Five Crowns Scorecard Banner to Display at Top -->
+    <div id="enter_score_bar">
+        Five Crowns Scorecard
+    </div>
+    
+    <div id="fc_whole_page">
+        
+    <!-- Form to display on page load. Total number of players -->
+    <div class="display_block" style="width:100%;text-align:center;"> 
+        <form class="all_forms" autocomplete="off" id = "player_number_form" role = "form">                      
+            <input pattern="[0-9]*" type="text"  class="name_input" id="number_of_players" placeholder = "Enter Number of Players"/><br>                   
+            <button type="submit">Submit</button> 
+        </form>   
+    </div>    
+     
+    <!-- Form to input player's names -->
+    <div class="display_none" id="name_form_cont" style="width:100%;text-align:center;">   
+        <form class="all_forms" autocomplete="off" id="name_form" role ="form">
+            <div id="name_form_input">
+                <!-- Content is dynamic based on number of players -->
+            </div>                                    
+            <button type="submit">Enter Names</button>          
+        </form> 
+    </div>    
+  
+    <!-- Form for entering player's score -->
+    <div id="score_form_cont" class="display_none" style="width:100%;text-align:center;">   
+        <form autocomplete="off" id = "score_form" role = "form">
+            <div id="score_form_input">
+                <!-- Content is dynamic based on number of players -->
+            </div>
+        <button type="submit">Submit Scores</button>       
+    </form>
+        
+    </div>   
+  
+    <!-- Player name header and full game Scorecard -->
+    <div id="scorecard_master_container">
+        <!-- Scorecard is dynamic based on number of players -->
+    </div>
+             
+</div>
+  
+</body> 
+<script type="text/javascript" src="{% static 'js/five_crowns_scripts.js' %}" async defer></script> 
+{% endblock %}

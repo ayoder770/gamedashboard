@@ -1,0 +1,140 @@
+ body{
+     margin:0px;
+     overscroll-behavior-y:contain!important;
+}     
+    .full_page{
+        width:100%;
+        font-family: sans-serif;
+        text-align: center;
+        background-color: azure;
+    }
+    .clue_container{
+        width:100%;
+        position: relative;
+        margin: auto;
+        display:flex;
+    }
+    .item_row{
+        display: inline-flex;
+        height: 45px;
+        width: 100%;
+        box-sizing: border-box;
+        border: 2px solid #000000;
+    }
+    .row_dsk{
+        height:67px;
+    }
+    .thirds{
+        position:relative;
+        width:33.33%;
+    }
+    /*-----------------MY CARD-------------------*/
+    .my_card_box{
+        width: 40px;
+        background-color:#ffffff;
+        box-sizing:border-box;
+        border-left: 2px solid #000000;
+        padding-top: 6px;
+        font-size:25px;
+    }
+/*----------YES AND NO BOX ALWAYS---------*/
+    .yon_always{
+        width: 55px;
+        font-weight: bold;
+        padding-top: 12px;
+        box-sizing: border-box;
+    }
+    .yon_dsk{
+        /*padding-top: 22px!important;*/
+    }
+/*----------YES BOX---------*/
+    .yes_default{
+        background-color:green;
+        color: #ffffff;
+    }
+     .yes_default:hover{
+        cursor: pointer;
+    }
+    .yes_no_state{
+        background-color:red;
+        color:red;
+    }
+/*----------NO BOX---------*/
+    .no_default{
+        background-color: red;
+        color: #ffffff;
+    }
+    .no_default:hover{
+        cursor: pointer;
+    }
+    .no_yes_state{
+        background-color: green;
+        color:green;
+    }
+/*----------ITEM BOX ALWAYS---------*/
+    .item_always{
+        font-size: 16px;
+        width: calc(100% - 150px);
+        border-right-style: none;
+        border-left-style: none;
+        font-weight: bold;
+        padding-top: 12px;
+        border-left: 2px solid #000000;
+        border-right: 2px solid #000000;
+        box-sizing: border-box;
+    }
+    .item_always:hover{
+        cursor:pointer;
+    }
+/*----------ITEM BOX---------*/
+    .item_default{
+        background-color:#ffffff;
+    }
+    .item_yes{
+        background-color:green;
+        color:#ffffff;
+    }
+    .item_no{
+        background-color:red;
+        color:#000000;
+    }
+/*---------------------------------*/
+    .list_title{
+        font-weight: bolder;
+        text-transform: uppercase;
+        padding-top: 12px;
+        border: 2px solid #000;
+        box-sizing: border-box;
+        background-color: chocolate;
+        height: 50px;
+        font-size: 20px;
+    }
+    @media screen and (max-width:480px){
+        .clue_container{
+            width:100%;
+            min-width:100%;
+        }
+        .thirds{width:100%!important;}
+    }
+
+
+    @media screen and (max-width:800px){
+        .item_always{
+            font-size: 12px;
+        }
+    }
+
+
+
+    @media screen and (max-width:768px){
+        .clue_container{
+            display:block;
+        }
+        .thirds{
+            width:80%;
+            margin:auto;
+        }
+        .item_always{font-size:16px;}
+        .row_dsk{height:45px;}
+        
+    }
