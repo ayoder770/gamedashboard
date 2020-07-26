@@ -27,6 +27,8 @@ def taboo(request):
 def pictionary(request):
     return render(request, "pictionary.html")
 
+def cluePlus(request):
+    return render(request, "clue-plus.html")
 
 def db(request):
 

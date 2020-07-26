@@ -17,6 +17,7 @@ import hello.views
 urlpatterns = [
     path("", hello.views.index, name="index"),
     path("clue/", hello.views.clue, name="clue"),
+    path("cluePlus/", hello.views.cluePlus, name="cluePlus"),
     path("fivecrowns/", hello.views.fivecrowns, name="fivecrowns"),
     path("sorry/", hello.views.sorry, name="sorry"),
     path("taboo/", hello.views.taboo, name="taboo"),
