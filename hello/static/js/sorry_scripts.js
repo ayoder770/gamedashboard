@@ -85,7 +85,7 @@ function shuffle_deck(){
 
 
 // Change card width to 95%
-document.getElementById("sorry_whole_page").style.width = '90%';
+document.getElementById("sorry_whole_page").style.width = '95%';
 
 var cardWidth = document.getElementById("sorry_whole_page").offsetWidth;
 var cardHeight = cardWidth/0.625;
