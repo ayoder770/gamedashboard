@@ -82,8 +82,6 @@ function shuffle_deck(){
 }
 
 
-
-
 // Change card width to 95%
 document.getElementById("sorry_whole_page").style.width = '95%';
 
