@@ -1,63 +1,84 @@
-   $('.yes_default').click(function(){
-       if($(this).parent().hasClass('maybe')){
-           $(this).siblings('.item_default').addClass('item_yes'); //item box
-           $(this).siblings('.item_default').removeClass('item_default'); //item box
-           $(this).siblings('.no_default').addClass('no_yes_state'); // no box
-           $(this).siblings('.no_default').removeClass('no_default'); //no box
-           $(this).parent().removeClass('maybe'); // parent state
-           $(this).parent().addClass('affirmative'); //parent state
-           // change all siblings to no automatically
-           $(this).parent().siblings().children('.item_default').addClass('item_no'); //all sib item boxes
-           $(this).parent().siblings().children('.item_default').removeClass('item_default'); //all sib item boxex
-           $(this).parent().siblings().children('.yes_default').addClass('yes_no_state'); //all item yes boxes
-           $(this).parent().siblings().children('.yes_default').addClass('yes_no_state'); //all item yes boxes
-           $(this).parent().siblings('.maybe').addClass('negative'); // parent sib states
-           $(this).parent().siblings('.maybe').removeClass('maybe'); //parent sib states
-           
-       }
-   });
+
     
-     $('.no_default').click(function(){
-       if($(this).parent().hasClass('maybe')){
-           $(this).siblings('.item_default').addClass('item_no'); //item box
-           $(this).siblings('.item_default').removeClass('item_default'); //item box
-           $(this).siblings('.yes_default').addClass('yes_no_state'); // no box
-           $(this).siblings('.yes_default').removeClass('yes_default'); //no box
-           $(this).parent().removeClass('maybe'); // parent state
-           $(this).parent().addClass('negative'); //parent state
-       }
-   });  
+
+var check_yes = "<i class='fa fa-check-circle-o' aria-hidden='true'></i>";
+var check_no = "<i class='fa fa-times-circle-o' aria-hidden='true'></i>";
+
+// Function for when a player has a Clue item. Means two things:
+// The other players do not have this item
+// This item is not one of the three items to guess
+$('.have').click(function(){
+
+  if( (! $(this).hasClass('check_yes')) && (! $(this).hasClass('na') ) ){
+
+      // Change status of item for this player to yes
+      $(this).html(check_yes);
+      $(this).addClass('check_yes');
+
+      // Make the No and Maybe cells for this player "N/A"
+      $(this).siblings().addClass('na');
+      $(this).siblings('.dont_have').html('');
+      $(this).siblings().children().children('.mabes').removeClass('maybe_has');
+      $(this).siblings().children().children('.mabes').addClass('na');
 
 
-   //reset row when item is selected
-    $('.item_always').click(function(){
-        if($(this).parent().hasClass('affirmative')){
-            $(this).removeClass('item_yes');
-            $(this).addClass('item_default');
-            $(this).siblings('.no_yes_state').addClass('no_default'); // no box
-            $(this).siblings('.no_yes_state').removeClass('no_yes_state'); //no box
-            $(this).parent().removeClass('affirmative'); // parent state
-            $(this).parent().addClass('maybe'); //parent state
-        } else if($(this).parent().hasClass('negative')){
-            $(this).removeClass('item_no'); // item box
-            $(this).addClass('item_default'); // item box
-            $(this).siblings('.yes_no_state').addClass('yes_default'); // yes box
-            $(this).siblings('.yes_no_state').removeClass('yes_no_state'); //yes box
-            $(this).parent().removeClass('negative'); // parent state
-            $(this).parent().addClass('maybe'); //parent state   
-        }  
-    });
-     var my_card = '<i class="fa fa-home" aria-hidden="true"></i>';
-    // my card checkbox
-    $('.my_card_box').click(function(){
-        if($(this).hasClass('not_my_card')){
-           $(this).html(my_card);
-           $(this).addClass('my_card');
-           $(this).removeClass('not_my_card');
-        } else if ($(this).hasClass('my_card')){
-           $(this).empty();
-           $(this).addClass('not_my_card');
-           $(this).removeClass('my_card');
-        }
-    });
-    
+      // Change other player's to "No" for item
+      $(this).parent().parent().siblings().children().children('.dont_have').html(check_no);
+      $(this).parent().parent().siblings().children().children('.dont_have').addClass('check_no');
+
+      // Change other player's "Yes" and "Maybe" Cells to "na"
+      $(this).parent().parent().siblings().children().children('.have').html('');
+      $(this).parent().parent().siblings().children().children('.have').addClass('na');
+      $(this).parent().parent().siblings().children().children('.maybe_container').children().children('.mabes').removeClass('maybe_has');
+      $(this).parent().parent().siblings().children().children('.maybe_container').children().children('.mabes').addClass('na');
+      $(this).parent().parent().siblings().children().children('.maybe_container').addClass('na');
+
+      // Change the overall item status to no
+      $(this).parent().parent().siblings().children('.clue_item').addClass('not_this_item');
+
+  }
+
+});
+
+
+
+$('.dont_have').click(function(){
+
+  if( (! $(this).hasClass('check_no')) && (! $(this).hasClass('na') ) ){
+
+      // Change status of item for this player to no
+      $(this).html(check_no);
+      $(this).addClass('check_no');
+
+      // Make the Yes and Maybe cells for this player "N/A"
+      $(this).siblings().addClass('na');
+      $(this).siblings('.have').html('');
+      $(this).siblings().children().children('.mabes').removeClass('maybe_has');
+      $(this).siblings().children().children('.mabes').addClass('na');
+
+  }
+
+
+
+
+
+});
+
+
+
+$('.mabes').click(function(){
+
+  // Maybe Cell is neither in maybe state nor an na state
+  if( (! $(this).hasClass('maybe_has')) && (! $(this).hasClass('na') ) ){
+
+    $(this).addClass('maybe_has');
+
+  } else if ( $(this).hasClass('maybe_has') ){
+
+    $(this).removeClass('maybe_has');
+
+  }
+
+
+
+})
