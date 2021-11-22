@@ -1,3 +1,13 @@
+<!-- #################################################################
+# File Name: fivecrowns.html
+#
+# Description: HTML for Five Crowns scorecard
+#
+# File History
+# 11/22/2021 - Andrew Yoder : Added header
+#                           : Shortened number of players form placeholder
+###################################################################-->
+
 {% extends "base.html" %}
 {% load static %}
 
@@ -16,7 +26,7 @@
     <!-- Form to display on page load. Total number of players -->
     <div class="display_block" style="width:100%;text-align:center;"> 
         <form class="all_forms" autocomplete="off" id = "player_number_form" role = "form">                      
-            <input pattern="[0-9]*" type="text"  class="name_input" id="number_of_players" placeholder = "Enter Number of Players"/><br>                   
+            <input pattern="[0-9]*" type="text"  class="name_input" id="number_of_players" placeholder = "Number of Players"/><br>                   
             <button type="submit">Submit</button> 
         </form>   
     </div>    

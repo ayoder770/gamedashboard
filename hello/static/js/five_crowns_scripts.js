@@ -1,5 +1,16 @@
+/*###################################################################
+# File Name: five_crowns_scripts.js
+#
+# Description: JavaScript for Five Crowns score card
+#
+# File History
+# 11/22/2021 - Andrew Yoder : Added Header
+#                           : Highlight 1st - 3rd place with colors
+####################################################################*/
+
 var current = 3;
 var numberOfPlayers;
+var all_players = [];
 
 // Function to read number of players and build the form dynamically
 $(function(){
@@ -107,11 +118,16 @@ $(function(){
             if( playerName != ""){
                 document.getElementById(scoreFormNameID).placeholder = playerName;
                 document.getElementById(nameColumnHeaderID).innerHTML = playerName;
+
+		let player = { "player": nameColumnHeaderID, "name": playerName, "score": 0 };
+		all_players.push(player);
+
             } else{
                document.getElementById(scoreFormNameID).placeholder = "N/A";
                document.getElementById(nameColumnHeaderID).innerHTML = "N/A"; 
             }  
         }
+	console.log(all_players);
         
         // Set the background for row three column
         document.getElementById("row_round_3").style.backgroundColor="#C494D2";
@@ -120,9 +136,24 @@ $(function(){
 }); 
 
 
+function update_player_object( player, cumulative_score ){
+
+    console.log("New score for player " + player + ": " + cumulative_score );
+    for( var i = 0; i <= all_players.length; i++ ){
+      if( all_players[i].player == "P" + player ){
+        all_players[i].score = cumulative_score;
+        break;
+      }
+    }
+}
+
+
 // Function to update player's score
 function column_update(round_number, player, score){
     console.log("Round "+round_number+" | Player "+player+" | Score "+score);
+
+    // Cumulative score for player
+    var new_cumulative_score;
     
     // ID of cell for player's score this round
     var s_new_cell = 'p'+player+'_'+round_number+'_n';
@@ -143,17 +174,23 @@ function column_update(round_number, player, score){
         // Enter the player's score for this round
         document.getElementById(s_new_cell).innerHTML = Number(score);
         
-        if(round_number == 3 ){
+        if( round_number == 3 ){
+
             // Cumulative score is the same as round score since round one
-            document.getElementById(s_upd_cell).innerHTML = Number(score);
-        } else{
+	    new_cumulative_score = Number(score);
+            document.getElementById(s_upd_cell).innerHTML = new_cumulative_score;
+
+        } else {
+
             // Add this round score to cumulative score         
-            document.getElementById(s_upd_cell).innerHTML = Number(score) + Number(document.getElementById(s_old_total).innerHTML);
+            new_cumulative_score = Number(score) + Number(document.getElementById(s_old_total).innerHTML);
+            document.getElementById(s_upd_cell).innerHTML = new_cumulative_score;
+
         }   
     // If not a score correction, this player is all set. Move onto next player
         
     // Else this is a correction
-    } else{
+    } else {
         // Enter the corrected round score 
         document.getElementById(s_new_cell).innerHTML = Number(score);
         
@@ -173,10 +210,13 @@ function column_update(round_number, player, score){
             var nextRoundCumul = 'p'+player+'_'+(i+1)+'_u';
             
             // Update Score
-            document.getElementById(nextRoundCumul).innerHTML = Number(document.getElementById(lastCumulScore).innerHTML) + Number(document.getElementById(nextRoundScore).innerHTML);
+	    new_cumulative_score = Number(document.getElementById(lastCumulScore).innerHTML) + Number(document.getElementById(nextRoundScore).innerHTML);
+            document.getElementById(nextRoundCumul).innerHTML = new_cumulative_score
         
         } 
     }
+
+    update_player_object( player, new_cumulative_score );
 }
 
 
@@ -207,6 +247,31 @@ $(function(){
             column_update(this_round, i, playerScore);
             document.getElementById(formPlayerID).value='';
         }                  
+    }
+
+    // Sort players by score
+    all_players.sort(function(a,b){return a.score - b.score});
+    //console.log(all_players);
+
+    var last_player_score = all_players[0].score;
+    var colors = [ "gold", "silver", "brown", "white" ];
+    var color_index = 0;
+
+    for( var i = 0; i < all_players.length; i++ ){
+
+        // If greater than previous score and not beyond third place...
+        if( ( all_players[i].score > last_player_score ) && (color_index < 3 ) ){
+       	    color_index++;
+	}
+
+        //console.log("Previous score: " + last_player_score + " | Player score: " + all_players[i].score + " | color Index: " + color_index );
+
+	// Set last score
+	last_player_score = all_players[i].score;
+
+        // Set background to appropriate color
+        document.getElementById(all_players[i].player).style.backgroundColor = colors[color_index];
+
     }
     
     // Update for next round   
