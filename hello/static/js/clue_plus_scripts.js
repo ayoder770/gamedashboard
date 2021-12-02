@@ -1,13 +1,43 @@
 
     
 
-var check_yes = "<i class='fa fa-check-circle-o' aria-hidden='true'></i>";
-var check_no = "<i class='fa fa-times-circle-o' aria-hidden='true'></i>";
+var have = "<i class='fa fa-check-circle-o' aria-hidden='true'></i>";
+var dont_have = "<i class='fa fa-times-circle-o' aria-hidden='true'></i>";
+var not_shown = "<i class='fa fa-eye-slash' aria-hidden='true'></i>";
+var shown = "<i class='fa fa-eye' aria-hidden='true'></i>";
+var empty = "";
+
+// empty -> have -> dont_have -> not_shown -> shown
+$('.status_cell').click(function(){
+
+    if( $(this).hasClass("empty") ){
+        $(this).removeClass("empty");
+	$(this).addClass("have");
+	$(this).html(have);
+    } else if( $(this).hasClass("have") ){
+        $(this).removeClass("have");
+	$(this).addClass("dont_have");
+	$(this).html(dont_have);
+    } else if( $(this).hasClass("dont_have") ){
+        $(this).removeClass("dont_have");
+	$(this).addClass("not_shown");
+	$(this).html(not_shown);
+    } else if( $(this).hasClass("not_shown") ){
+        $(this).removeClass("not_shown");
+	$(this).addClass("shown");
+	$(this).html(shown);
+    } else if( $(this).hasClass("shown") ){
+        $(this).removeClass("shown");
+	$(this).addClass("empty");
+	$(this).html(empty);
+    }
+
+});
 
 // Function for when a player has a Clue item. Means two things:
 // The other players do not have this item
 // This item is not one of the three items to guess
-$('.have').click(function(){
+$('.havejjj').click(function(){
 
   if( (! $(this).hasClass('check_yes')) && (! $(this).hasClass('na') ) ){
 
@@ -42,7 +72,7 @@ $('.have').click(function(){
 
 
 
-$('.dont_have').click(function(){
+$('.dont_havejjj').click(function(){
 
   if( (! $(this).hasClass('check_no')) && (! $(this).hasClass('na') ) ){
 

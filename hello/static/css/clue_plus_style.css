@@ -4,7 +4,7 @@
 }     
     .full_page{
         width:100%;
-        max-width: 1024px;
+        max-width: 800px;
         margin: auto;
         font-family: sans-serif;
         text-align: center;
@@ -63,19 +63,15 @@
     width: 20%;
 }
 
-.have{
-    width: 30%;
-    padding: 8px;
-}
-.dont_have{
-    width: 30%;
+.status_cell{
+    width: 50%;
     padding: 8px;
 }
 .maybe_has{
     background-color: blue;
 }
 .maybe_container{
-    width: 40%;
+    width: 50%;
 }
 .maybe_row{
     width: 100%;
@@ -84,20 +80,38 @@
     border-right: 3px solid #000;
     box-sizing: border-box;
 }
-.check_yes{
+.have{
     font-size: 30px;
-    padding-top: 4px;
+    padding-top: 3px;
     color: green;
     font-weight: bold;
     background-color: lightgreen;
 }
-.check_no{
+.dont_have{
     font-size: 30px;
-    padding-top: 4px;
+    padding-top: 3px;
     color: red;
     font-weight: bold;
     background-color: lightcoral;
 }
+.not_shown{
+    font-size: 30px;
+    padding-top: 2px;
+    color: gold;
+    font-weight: bold;
+    background-color: lightYellow;
+}
+.shown{
+    font-size: 30px;
+    padding-top: 2px;
+    color: blue;
+    font-weight: bold;
+    background-color: lightblue;
+}
+.empty{
+    background-color: none;
+}
+
 .na{
     background-color: grey;
 }
