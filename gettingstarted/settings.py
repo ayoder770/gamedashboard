@@ -1,3 +1,13 @@
+#####################################################################
+# File Name: settings.py
+#
+# Description: Settings file for gamedashboard django app
+#
+# File History
+# 12/03/2021 - Andrew Yoder : Added header
+#                           : Changed "hello" to "gamedashboard"
+######################################################################
+
 """
 Django settings for gettingstarted project.
 
@@ -39,7 +49,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "hello",
+    "gamedashboard",
 ]
 
 MIDDLEWARE = [
