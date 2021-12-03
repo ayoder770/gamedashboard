@@ -1,3 +1,12 @@
+<!-- #################################################################
+# File Name: clue-plus.html
+#
+# Description: HTML Template for for Clue Plus Game Tracker
+#
+# File History
+# 12/03/2021 - Andrew Yoder : Initial Release
+###################################################################-->
+
 {% extends "base.html" %}
 {% load static %}
 
@@ -8,37 +17,16 @@
 
     <div class="full_page full_border">
 
-        <!-- ROW -->
+        <!-- Clue Suspects -->
+        {% for suspect in suspects %}
         <div class="status_row bb">
 
-            <!-- Clue Suspects -->
             <div class="fifth">
-                <div class="clue_item cell_default">Mr. Green</div>
+                <div class="clue_item cell_default">{{ suspect }}</div>
             </div>
 
-            <!-- Player 1 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 1 -->
-
-            <!-- Player 2 -->
+            {% for i in range %}
+            <!-- Player {{ i }} -->
             <div class="fifth">
                 <div class="cell_default player_status">
                     <div class="empty status_cell br"></div>
@@ -58,89 +46,25 @@
                     </div>
                 </div>
             </div>
-            <!-- /Player 2 -->
-
-            <!-- Player 3 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 3 -->
-
-            <!-- Player 4 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 4 -->
-
-
+            <!-- /Player {{ i }} -->
+            {% endfor %}
 
         </div>
-        <!-- /ROW -->
+        {% endfor %}
+        <!-- /Clue Suspects -->
 
+        <div style="border:1px solid #000;"></div>
 
-        <!-- ROW -->
+        <!-- Clue Weapons -->
+        {% for weapon in weapons %}
         <div class="status_row bb">
 
-            <!-- Clue Suspects -->
             <div class="fifth">
-                <div class="clue_item cell_default">Col. Mustard</div>
+                <div class="clue_item cell_default">{{ weapon }}</div>
             </div>
 
-            <!-- Player 1 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 1 -->
-
-            <!-- Player 2 -->
+            {% for i in range %}
+            <!-- Player {{ i }} -->
             <div class="fifth">
                 <div class="cell_default player_status">
                     <div class="empty status_cell br"></div>
@@ -160,89 +84,25 @@
                     </div>
                 </div>
             </div>
-            <!-- /Player 2 -->
-
-            <!-- Player 3 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 3 -->
-
-            <!-- Player 4 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 4 -->
-
-
+            <!-- /Player {{ i }} -->
+            {% endfor %}
 
         </div>
-        <!-- /ROW -->
+        {% endfor %}
+        <!-- /Clue Weapons -->
 
+        <div style="border:1px solid #000;"></div>
 
-        <!-- ROW -->
+        <!-- Clue Rooms -->
+        {% for room in rooms %}
         <div class="status_row bb">
-
-            <!-- Clue Suspects -->
+        
             <div class="fifth">
-                <div class="clue_item cell_default">Mrs. Peacock</div>
+                <div class="clue_item cell_default">{{ room }}</div>
             </div>
 
-            <!-- Player 1 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 1 -->
-
-            <!-- Player 2 -->
+            {% for i in range %}
+            <!-- Player {{ i }} -->
             <div class="fifth">
                 <div class="cell_default player_status">
                     <div class="empty status_cell br"></div>
@@ -262,364 +122,12 @@
                     </div>
                 </div>
             </div>
-            <!-- /Player 2 -->
-
-            <!-- Player 3 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 3 -->
-
-            <!-- Player 4 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 4 -->
-
-
+            <!-- /Player {{ i }} -->
+            {% endfor %}
 
         </div>
-        <!-- /ROW -->
-
-
-        <!-- ROW -->
-        <div class="status_row bb">
-
-            <!-- Clue Suspects -->
-            <div class="fifth">
-                <div class="clue_item cell_default">Prof. Plum</div>
-            </div>
-
-            <!-- Player 1 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 1 -->
-
-            <!-- Player 2 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 2 -->
-
-            <!-- Player 3 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 3 -->
-
-            <!-- Player 4 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 4 -->
-
-
-
-        </div>
-        <!-- /ROW -->
-
-
-        <!-- ROW -->
-        <div class="status_row bb">
-
-            <!-- Clue Suspects -->
-            <div class="fifth">
-                <div class="clue_item cell_default">Ms. Scarlet</div>
-            </div>
-
-            <!-- Player 1 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 1 -->
-
-            <!-- Player 2 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 2 -->
-
-            <!-- Player 3 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 3 -->
-
-            <!-- Player 4 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 4 -->
-
-
-
-        </div>
-        <!-- /ROW -->
-
-
-        <!-- ROW -->
-        <div class="status_row bb">
-
-            <!-- Clue Suspects -->
-            <div class="fifth">
-                <div class="clue_item cell_default">Mrs. White</div>
-            </div>
-
-            <!-- Player 1 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 1 -->
-
-            <!-- Player 2 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 2 -->
-
-            <!-- Player 3 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 3 -->
-
-            <!-- Player 4 -->
-            <div class="fifth">
-                <div class="cell_default player_status">
-                    <div class="empty status_cell br"></div>
-                    <div class="maybe_container">
-                        <div class="maybe_row bb">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                        <div class="maybe_row">
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes br fourth"></div>
-                            <div class="mabes fourth"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Player 4 -->
-
-
-
-        </div>
-        <!-- /ROW -->
-
-
+        {% endfor %}
+        <!-- /Clue Rooms -->
 
     </div>
 </body>

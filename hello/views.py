@@ -1,3 +1,13 @@
+#####################################################################
+# File Name: views.py
+#
+# Description: Views file for gamedashboard django app
+#
+# File History
+# 12/03/2021 - Andrew Yoder : Added header
+#                           : Pass clue lists to clue plus 
+######################################################################
+
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -8,7 +18,13 @@ import json
 
 from .models import Greeting
 
-# Create your views here.
+# Lists for clue views
+clue_suspects = [ "Mr. Green", "Col. Mustard", "Mrs. Peacock", "Prof. Plum", "Ms. Scarlet", "Mrs. White" ]
+clue_weapons = [ "Candlestick", "Knife", "Lead Pipe", "Revolver", "Rope", "Wrench" ]
+clue_rooms = [ "Ballroom", "Billiard Room", "Conservatory", "Dining Room", "Hall", "Kitchen", "Library", "Lounge", "Study" ]
+
+
+# gamedashboard views
 def index(request):
     return render(request, "index.html")
 
@@ -28,7 +44,8 @@ def pictionary(request):
     return render(request, "pictionary.html")
 
 def cluePlus(request):
-    return render(request, "clue-plus.html")
+    context = { "suspects" : clue_suspects, "weapons" : clue_weapons, "rooms" : clue_rooms, "range" : range(1,5) }
+    return render(request, "clue-plus.html", context)
 
 def db(request):
 

@@ -1,4 +1,11 @@
-
+/*###################################################################
+# File Name: clue_plus_scripts.js
+#
+# Description: JavaScript for Clue Plus Game Tracker
+#
+# File History
+# 12/03/2021 - Andrew Yoder : Initial Release
+####################################################################*/
     
 
 var have = "<i class='fa fa-check-circle-o' aria-hidden='true'></i>";
@@ -10,27 +17,27 @@ var empty = "";
 // empty -> have -> dont_have -> not_shown -> shown
 $('.status_cell').click(function(){
 
-    if( $(this).hasClass("empty") ){
-        $(this).removeClass("empty");
-	$(this).addClass("have");
-	$(this).html(have);
-    } else if( $(this).hasClass("have") ){
-        $(this).removeClass("have");
-	$(this).addClass("dont_have");
-	$(this).html(dont_have);
-    } else if( $(this).hasClass("dont_have") ){
-        $(this).removeClass("dont_have");
-	$(this).addClass("not_shown");
-	$(this).html(not_shown);
-    } else if( $(this).hasClass("not_shown") ){
-        $(this).removeClass("not_shown");
-	$(this).addClass("shown");
-	$(this).html(shown);
-    } else if( $(this).hasClass("shown") ){
-        $(this).removeClass("shown");
-	$(this).addClass("empty");
-	$(this).html(empty);
-    }
+  if( $(this).hasClass("empty") ){
+      $(this).removeClass("empty");
+	    $(this).addClass("have");
+	    $(this).html(have);
+  } else if( $(this).hasClass("have") ){
+      $(this).removeClass("have");
+      $(this).addClass("dont_have");
+	    $(this).html(dont_have);
+  } else if( $(this).hasClass("dont_have") ){
+      $(this).removeClass("dont_have");
+	    $(this).addClass("not_shown");
+	    $(this).html(not_shown);
+  } else if( $(this).hasClass("not_shown") ){
+      $(this).removeClass("not_shown");
+	    $(this).addClass("shown");
+	    $(this).html(shown);
+  } else if( $(this).hasClass("shown") ){
+      $(this).removeClass("shown");
+	    $(this).addClass("empty");
+	    $(this).html(empty);
+  }
 
 });
 
@@ -109,6 +116,4 @@ $('.mabes').click(function(){
 
   }
 
-
-
-})
+});
