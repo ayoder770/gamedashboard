@@ -1,12 +1,13 @@
-<!-- #################################################################
-# File Name: fivecrowns.html
-#
-# Description: HTML for Five Crowns scorecard
-#
-# File History
-# 11/22/2021 - Andrew Yoder : Added header
-#                           : Shortened number of players form placeholder
-###################################################################-->
+<!--==================================================================== 
+= File Name: fivecrowns.html
+=
+= Description: HTML for Five Crowns scorecard
+=
+= File History
+= 11/22/2021 - Andrew Yoder : Added header
+=                           : Shortened number of players form placeholder
+= 12/18/2021 - Andrew Yoder : Added two crowns to page title bar
+=====================================================================-->
 
 {% extends "base.html" %}
 {% load static %}
@@ -18,7 +19,9 @@
     
     <!-- Five Crowns Scorecard Banner to Display at Top -->
     <div id="enter_score_bar">
-        Five Crowns Scorecard
+	    <img width="30" src="{% static 'images/crown.png' %}">
+	    Five Crowns Scorecard
+	    <img width="30" src="{% static 'images/crown.png' %}">
     </div>
     
     <div id="fc_whole_page">

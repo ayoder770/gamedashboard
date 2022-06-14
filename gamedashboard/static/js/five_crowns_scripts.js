@@ -1,12 +1,13 @@
-/*###################################################################
-# File Name: five_crowns_scripts.js
-#
-# Description: JavaScript for Five Crowns score card
-#
-# File History
-# 11/22/2021 - Andrew Yoder : Added Header
-#                           : Highlight 1st - 3rd place with colors
-####################################################################*/
+/********************************************************************
+* File Name: five_crowns_scripts.js
+*
+* Description: JavaScript for Five Crowns score card
+*
+* File History
+* 11/22/2021 - Andrew Yoder : Added Header
+*                           : Highlight 1st - 3rd place with colors
+* 12/18/2021 - Andrew Yoder : Assign generic Player_x name if a name is not provided
+********************************************************************/
 
 var current = 3;
 var numberOfPlayers;
@@ -114,18 +115,17 @@ $(function(){
             // ID of element containing the player's name at top of card
             var nameColumnHeaderID = 'P'+i;
             
-            // Update the DOM with player's name
-            if( playerName != ""){
-                document.getElementById(scoreFormNameID).placeholder = playerName;
-                document.getElementById(nameColumnHeaderID).innerHTML = playerName;
+            // Assign generic name if no name was provided
+	    if( playerName == "" ){
+              playerName = "Player_" + i;
+	    }
 
-		let player = { "player": nameColumnHeaderID, "name": playerName, "score": 0 };
-		all_players.push(player);
+            document.getElementById(scoreFormNameID).placeholder = playerName;
+            document.getElementById(nameColumnHeaderID).innerHTML = playerName;
 
-            } else{
-               document.getElementById(scoreFormNameID).placeholder = "N/A";
-               document.getElementById(nameColumnHeaderID).innerHTML = "N/A"; 
-            }  
+            let player = { "player": nameColumnHeaderID, "name": playerName, "score": 0 };
+	    all_players.push(player);
+
         }
 	console.log(all_players);
         
@@ -295,7 +295,7 @@ $(function(){
 // Display the Score form 
 $('#scorecard_master_container').on("click", ".fc_round", function(){
     document.getElementById("score_form_cont").classList.toggle('display_block');
-        document.getElementById("score_form_cont").classList.toggle('display_none');
+    document.getElementById("score_form_cont").classList.toggle('display_none');
     var this_id = $(this).attr('id');
     var splt = this_id.split("_");
     var new_id = Number(splt[1]);
