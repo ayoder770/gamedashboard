@@ -11,12 +11,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-import requests
+#import requests
 import os
-import psycopg2
+#import psycopg2
 import json
 
-from .models import Greeting
+#from .models import Greeting
 
 # Lists for clue views
 clue_suspects = [ "Mr. Green", "Col. Mustard", "Mrs. Peacock", "Prof. Plum", "Ms. Scarlet", "Mrs. White" ]
