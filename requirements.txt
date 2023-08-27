@@ -2,3 +2,4 @@ django
 gunicorn
 requests
 psycopg2
+dj-database-url
